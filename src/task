@@ -1,0 +1,13 @@
+gra polega na uzupełnieniu pól planszy, każdy rząd zawiera jedną literę i jedną cyfrę tylko raz
+Eulero ("Graeco-Latin Square", "Euler Square") is a puzzle with letters and digits.
+The goal is to fill in the grid with symbols according to the following rules:
+
+    Each cell contains one letter and one digit.
+    Every row and every column contains each letter and each digit exactly once.
+    No two cells contain the same pair of symbols.
+
+Sprawdzanie rzędu i kolumny:
+każdy String char.At(0) i String.charAt(1) nie może się powtarzać dla rzędu i kolumny
+
+poprawianie pola:
+każda komórka która nie ma static może być dowolnie zmieniona
