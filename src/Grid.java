@@ -1,5 +1,7 @@
-import java.util.Scanner;
+import lombok.Getter;
 
+import java.util.Scanner;
+import lombok.Getter;
 public class Grid implements Fields {
 
     private final String[][] board;
