@@ -9,16 +9,16 @@ public class Eulero implements Fields{
     }
 
     public void setGrid() {
-        grid.setBoard(1, 2, pole1+"_");
         grid.setBoard(1, 3, "_"+pole2);
-        grid.setBoard(1, 4, pole3+"_");
         grid.setBoard(2, 1, "_"+pole4);
-        grid.setBoard(2, 3, pole5+"_");
-        grid.setBoard(3, 2, pole6+"_");
-        grid.setBoard(3, 4, pole7+"_");
         grid.setBoard(4, 3, "_"+pole8);
         grid.setBoard(5, 2, "_"+pole9);
         grid.setBoard(4, 3, "_"+pole10);
+        grid.setBoard(1, 2, pole1+"_");
+        grid.setBoard(1, 4, pole3+"_");
+        grid.setBoard(2, 3, pole5+"_");
+        grid.setBoard(3, 2, pole6+"_");
+        grid.setBoard(3, 4, pole7+"_");
         grid.setBoard(4, 4, pole11+"_");
         for (int i = 0; i < grid.getBoard().length; i++) {
             for (int j = 0; j < grid.getBoard()[i].length; j++) {
@@ -49,12 +49,8 @@ public class Eulero implements Fields{
         int row = scanner.nextInt();
         int column = scanner.nextInt();
         scanner.nextLine();
-        String value = scanner.nextLine();
-        if (grid.checkValue(value))
-            grid.setField(row, column,value);
-        else {
-            System.out.println("Pole nie może zawierać wartości mniejszej od 1 i większej od 2");
-        }
+        grid.setField(row, column);
+
     }
     public void checkGrid()
     {

@@ -1,7 +1,6 @@
-import lombok.Getter;
 
 import java.util.Scanner;
-import lombok.Getter;
+
 public class Grid implements Fields {
 
     private final String[][] board;
@@ -26,19 +25,26 @@ public class Grid implements Fields {
         this.board[row][column] = field;
     }
 
-    public void setField( int row, int column, String field ) {
+    public void setField( int row, int column ) {
+        System.out.println("Podaj znak: ");
         char ch1 = getField(row, column).charAt(0);
         char ch2 = getField(row, column).charAt(1);
-        if (field.length() < 2) {
-            if (ch1 == '_' && ch2 != '_') {
-                this.board[row][column] = field + ch2;
-            } else if (ch2 == '_' && ch1 != '_') {
-                this.board[row][column] = ch1 + field;
-            }
-        } else if (field.length() == 2) {
-            this.board[row][column] = field;
+        char field1;
+        if (ch1 == '_' && ch2 != '_') {
+            field1 = scanner.next().charAt(0);
+            this.board[row][column] = String.valueOf(field1) + ch2;
+        } else if (ch2 == '_' && ch1 != '_') {
+            field1 = scanner.next().charAt(0);
+            this.board[row][column] = ch1 + String.valueOf(field1);
+        }
+        else if(ch1=='_'&&ch2=='_')
+        {
+            char c1=scanner.next().charAt(0);
+            char c2=scanner.next().charAt(0);
+            this.board[row][column]=String.valueOf(c1)+c2;
         }
     }
+
 
     public boolean checkGrid() {
         for (int i = 1; i < board.length - 1; i++) {
@@ -59,13 +65,11 @@ public class Grid implements Fields {
     public boolean checkValue( String value ) {
         return !(value.length() > 2 || value.length() < 1);
     }
-    public boolean checkField(int row, int column)
-    {
-        char charArray[]={pole1,pole2,pole3,pole4,pole5,pole6,pole7,pole8,pole9,pole10,pole11};
-        for (int i=0; i<charArray.length;i++)
-        {
-            if(board[row][column].charAt(0)==charArray[i]||board[row][column].charAt(1)== charArray[i])
-            {
+
+    public boolean checkField( int row, int column ) {
+        char charArray[] = {pole1, pole2, pole3, pole4, pole5, pole6, pole7, pole8, pole9, pole10, pole11};
+        for (int i = 0; i < charArray.length; i++) {
+            if (board[row][column].charAt(0) == charArray[i] || board[row][column].charAt(1) == charArray[i]) {
                 return false;
             }
         }
