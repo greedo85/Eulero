@@ -37,6 +37,7 @@ public class Grid implements Fields {
         } else if (ch1 == '_' && ch2 == '_') {
             char c2 = scanner.next().charAt(0);
             this.board[row][column] = String.valueOf(field) + c2;
+
         }
     }
 
@@ -54,9 +55,12 @@ public class Grid implements Fields {
         } else {
             char ch4 = scanner.next().charAt(0);
             board[row][column] = String.valueOf(ch3) + ch4;
+
+
         }
 
     }
+
 
     public boolean checkGrid() {
         for (int i = 1; i < board.length - 1; i++) {
@@ -73,6 +77,7 @@ public class Grid implements Fields {
         }
         return false;
     }
+
 
 
 
