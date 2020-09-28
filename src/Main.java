@@ -24,6 +24,7 @@ public class Main {
                 }
                     break;
                 case 'p':
+                    eulero.editField();
                     break;
                 case 's':
                     eulero.checkGrid();
