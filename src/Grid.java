@@ -57,11 +57,6 @@ public class Grid implements Fields {
             board[row][column] = String.valueOf(ch3) + ch4;
 
 
-        }
-
-    }
-
-
     public boolean checkGrid() {
         for (int i = 1; i < board.length - 1; i++) {
             for (int j = 1; i < board[i].length - 1; j++) {
@@ -77,7 +72,6 @@ public class Grid implements Fields {
         }
         return false;
     }
-
 
 
 
