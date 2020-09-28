@@ -40,6 +40,23 @@ public class Grid implements Fields {
         }
     }
 
+    public void editField( int row, int column ) {
+        char ch1 = getField(row, column).charAt(0);
+        char ch2 = getField(row, column).charAt(1);
+        char ch3 = scanner.next().charAt(0);
+        if ((row == 1 && column == 3) || (row == 2 && column == 1) || (row == 4 && column == 3
+                || (row == 5 && column == 2) || (row == 4 && column == 3))) {
+            board[row][column] = String.valueOf(ch3) + ch2;
+        } else if ((row == 1 && column == 2) || (row == 1 && column == 4) ||
+                (row == 2 && column == 3) || (row == 3 && column == 2) ||
+                (row == 3 && column == 4) || (row == 4 && column == 4)) {
+            board[row][column] = ch1 + String.valueOf(ch3);
+        } else {
+            char ch4 = scanner.next().charAt(0);
+            board[row][column] = String.valueOf(ch3) + ch4;
+        }
+
+    }
 
     public boolean checkGrid() {
         for (int i = 1; i < board.length - 1; i++) {
@@ -57,28 +74,6 @@ public class Grid implements Fields {
         return false;
     }
 
-    public void editField( int row, int column ) {
-        char ch1 = getField(row, column).charAt(0);
-        char ch2 = getField(row, column).charAt(1);
-        char ch3= scanner.next().charAt(0);
-        if((row==1&&column==3)||(row==2&&column==1)||(row==4&&column==3
-        ||(row==5&&column==2)||(row==4&&column==3)))
-        {
-            board[row][column]=String.valueOf(ch3)+ch2;
-        }
-        else if((row==1&&column==2)||(row==1&&column==4)||
-                (row==2&&column==3)||(row==3&&column==2)||
-                (row==3&&column==4)||(row==4&&column==4))
-        {
-            board[row][column]=ch1+String.valueOf(ch3);
-        }
-        else
-        {
-            char ch4=scanner.next().charAt(0);
-            board[row][column]=String.valueOf(ch3)+ch4;
-        }
-
-    }
 
 
    /* public boolean checkField( int row, int column ) {
