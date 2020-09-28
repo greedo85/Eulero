@@ -55,7 +55,8 @@ public class Grid implements Fields {
         } else {
             char ch4 = scanner.next().charAt(0);
             board[row][column] = String.valueOf(ch3) + ch4;
-
+        }
+    }
 
     public boolean checkGrid() {
         for (int i = 1; i < board.length - 1; i++) {
