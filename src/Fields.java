@@ -1,13 +1,13 @@
 public interface Fields {
-    public static final char pole1='B';
-    public static final char pole2='5';
-    public static final char pole3='A';
-    public static final char pole4='2';
-    public static final char pole5='C';
-    public static final char pole6='E';
-    public static final char pole7='B';
-    public static final char pole8='2';
-    public static final char pole9='1';
-    public static final char pole10='4';
-    public static final char pole11='C';
+    char pole1='B';
+    char pole2='5';
+    char pole3='A';
+    char pole4='2';
+    char pole5='C';
+    char pole6='E';
+    char pole7='B';
+    char pole8='2';
+    char pole9='1';
+    char pole10='4';
+    char pole11='C';
 }
