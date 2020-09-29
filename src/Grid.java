@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Grid implements Fields {
 
+    private char ch1;
+    private char ch2;
+
     private final String[][] board;
     Scanner scanner = new Scanner(System.in);
 
@@ -26,9 +29,9 @@ public class Grid implements Fields {
     }
 
     public void setField( int row, int column ) {
+        ch1 = getField(row, column).charAt(0);
+        ch2 = getField(row, column).charAt(1);
         System.out.println("Podaj znak: ");
-        char ch1 = getField(row, column).charAt(0);
-        char ch2 = getField(row, column).charAt(1);
         char field = scanner.next().charAt(0);
         if (ch1 == '_' && ch2 != '_') {
             this.board[row][column] = String.valueOf(field) + ch2;
@@ -42,10 +45,11 @@ public class Grid implements Fields {
     }
 
     public void editField( int row, int column ) {
-        char ch1 = getField(row, column).charAt(0);
-        char ch2 = getField(row, column).charAt(1);
+        ch1 = getField(row, column).charAt(0);
+        ch2 = getField(row, column).charAt(1);
         char ch3 = scanner.next().charAt(0);
-        if ((row == 1 && column == 3) || (row == 2 && column == 1) || (row == 4 && column == 3
+        if ((row == 1 && column == 3) || (row == 2 && column == 1) ||
+                (row == 4 && column == 3
                 || (row == 5 && column == 2) || (row == 4 && column == 3))) {
             board[row][column] = String.valueOf(ch3) + ch2;
         } else if ((row == 1 && column == 2) || (row == 1 && column == 4) ||

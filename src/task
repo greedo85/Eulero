@@ -11,3 +11,5 @@ każdy String char.At(0) i String.charAt(1) nie może się powtarzać dla rzędu
 
 poprawianie pola:
 każda komórka która nie ma static może być dowolnie zmieniona
+
+zapisywanie pól - zrobić do tego osobną metodę która ustala board row column w 3 przypadkach 0, 1, 01
